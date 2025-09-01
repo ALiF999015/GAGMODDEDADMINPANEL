@@ -1,0 +1,12 @@
+if not game.Players.LocalPlayer.PlayerGui:FindFirstChild("Admin_Panel") then
+if game:GetService("StarterGui").Admin_Panel:FindFirstChild("LocalScript") then
+print("Deleting Anti-Admin")
+game:GetService("StarterGui").Admin_Panel.LocalScript:Destroy()
+end
+print("Putting into PlayerGui")
+local adminGui = game:GetService("StarterGui").Admin_Panel:Clone()
+adminGui.Parent = game.Players.LocalPlayer.PlayerGui
+adminGui.Enabled = true
+else
+game.Players.LocalPlayer.PlayerGui.Admin_Panel.Enabled = not game.Players.LocalPlayer.PlayerGui.Admin_Panel.Enabled
+end
